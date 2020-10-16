@@ -1,0 +1,40 @@
+.project-detailHeader{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.project-detailHeadingInfo{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.headingTitle{
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.2em;
+}
+
+.headingTitle > div{
+    display: flex;
+    align-items: center;
+}
+
+.headingBody .heading-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 800px){
+    .headingBody .heading-items{
+        display: block;
+    }
+    .headingBody .heading-items span, strong{
+        width: 100%;
+    }
+}

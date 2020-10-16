@@ -1,0 +1,315 @@
+@import "./projectDetails.css";
+
+:root{
+    --even-color-row: white;
+    --odd-color-row: #F8F9FC;
+    --highlight-color-row: #EDEEF0;
+    --highlight-color: #4E73DF;
+
+}
+
+.wrapper{
+    margin-left: 15em;
+    width: 90%;
+}
+
+.container-fluid{
+    width: 100%;
+}
+
+/* .projects-div{
+    overflow-x: auto;
+} */
+
+/* Side nav bar */
+
+#accordionSidebar{
+    color: white;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#login-root{
+    display: flex;
+    height: 39em !important;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-root .card{
+    display: flex;
+    width: 25em;
+}
+
+#login-root .card .card-body{
+    display: flex;
+    justify-content: center;
+}
+
+#login-root .card .card-body form input{
+    margin-bottom: 1em;
+}
+
+.input-card{
+    width: 20em !important;
+}
+
+/* Search in header */
+
+.header-search-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.header-search-items input{
+    display: none;
+}
+
+.header-search-items input[type="text"] {
+    width: 13em;
+}
+
+.header-search-items input:not(:last-of-type) {
+    margin-right: 1em;
+    margin-bottom: 0.7em;
+}
+
+.type-date{
+    width: 10.5em !important;
+}
+
+/* Select with checkbox */
+
+.multipleSelection { 
+    width: 100%; 
+    -webkit-user-select: none;
+    user-select: none;
+} 
+
+.header-div-projects{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.selectBox{
+    display: flex !important;
+    justify-content: space-between;
+    max-width: 10em;
+    min-width: fit-content;
+}
+
+.selectBox:hover{
+    color: #6e707e;
+    background-color: #fff;
+    border-color: #bac8f3;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.filter-active{
+    border-radius: 50%;
+    padding: 0.28em;
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+#filterButton{
+    cursor: pointer;
+    margin-right: 0.5em;
+}
+
+#checkBoxes { 
+    display: none; 
+    margin-top: 0.3em;
+    /* border: 1px black solid;  */
+} 
+
+#checkBoxes label { 
+    display: block; 
+    padding: 0.5em;
+    -webkit-user-select: none;
+} 
+
+#checkBoxes label:not(:first-child){
+    margin-left: 0.8em;
+}
+
+#checkBoxes label:hover { 
+    background-color: var(--highlight-color); 
+    color: white;
+} 
+
+/* Tables */
+
+.workflow-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.workflow-table th, .workflow-table td{
+    padding: 12px;
+    user-select: none;
+}
+
+.workflow-table th{
+    /* color: black; */
+    font-weight: bold;
+    text-align: center;
+    /* border-bottom: solid 1px var(--highlight-color-row); */
+}
+
+.workflow-table td{
+    color: black;
+    text-align: center;
+}
+
+.workflow-table td i{
+    cursor: pointer;
+}
+
+.workflow-table td i:hover{
+    cursor: pointer;
+    color: var(--highlight-color);
+}
+
+
+/* .workflow-table tbody tr:nth-child(even){
+    background-color: var(--even-color-row);
+} */
+
+.workflow-table tbody tr:hover{
+    background-color: var(--highlight-color-row);
+}
+
+/* Project Creation */
+
+.fit-inputs-form input, select{
+    width: 220px !important;
+    min-width: 2em;
+}
+
+.fit-inputs-form span{
+    width: 7em;
+}
+
+.create-project-header{
+    display: flex ;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.creation-project-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.creation-project-header > div:not(:last-child){
+    margin-right: 2.9em;
+}
+
+.newClient-project{
+    margin-left: 1.2em;
+    margin-top: 9.8px;
+}
+
+.inputSelect {
+    /* position: absolute;
+    margin-left: -225px;
+    margin-bottom: 20px; */
+    display: table-row !important;
+    width: 50px !important;
+}
+
+/* .newClient-project::after{
+    content: ' Nuevo';
+} */
+
+.newClient-project:hover{
+    color: var(--highlight-color);
+    cursor: pointer;
+}
+
+.editableBox button{
+    background: transparent !important;
+    border: 1px solid #d1d3e2;
+}
+
+/* .overlay{
+  visibility: hidden;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.pop-up{
+    position: absolute !important;
+    width: 70% !important;
+    padding: 1em;
+}
+
+.pop-up-form{
+    display: block;
+} */
+
+@media (max-width: 600px){
+    .newClient-project{
+        margin-left: 0.9em;
+    }
+}
+
+@media (max-width: 800px){
+    .project-creation-table td input, select{
+        width: auto ;
+    }
+    .project-creation-table td input[type=number] {
+        width: 7em ;
+    }
+    .fit-inputs-form input, select{
+        width: 14em ;
+        min-width: 2em;
+    }
+    #login-root .card{
+        width: 20em;
+    }
+    .input-card{
+        width: 15em !important;
+    }
+
+    .select-table-input{
+        width: 5em !important;
+    }
+
+    .editableBox{
+        width: auto !important ;
+    }
+    
+}
+
+@media (max-width: 1200px){
+    .creation-project-header > div:not(:last-child){
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 953px){
+    .newClient-project::after{
+        content: '';
+        margin-right: 0.5em;
+    }
+}

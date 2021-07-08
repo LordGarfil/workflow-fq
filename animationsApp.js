@@ -20,16 +20,16 @@
     if ($(window).width() < 767){
       $(".nav-item").on('click', function(e) {
         $("body").toggleClass("sidebar-toggled");
-        $(".sidebar").toggleClass("toggled");
-          $(".container-fluid").show();
+        // $(".sidebar").toggleClass("toggled");
+          // $(".container-fluid").show();
           $('.sidebar .collapse').collapse('hide');
     });
   }else{
     $(".sidebar").addClass("toggled");
     $('.sidebar .collapse').collapse('hide');
     $(".nav-item").on('click', function(e) {
-      $(".sidebar").addClass("toggled");
-      $(".container-fluid").show();
+      // $(".sidebar").addClass("toggled");
+      // $(".container-fluid").show();
     });
   };
 
@@ -79,6 +79,5 @@
   $("body").addClass("sidebar-toggled");
   $(".sidebar").addClass("toggled");
   $('.sidebar .collapse').collapse('hide');
-
 
 })(jQuery); // End of use strict

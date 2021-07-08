@@ -46,7 +46,7 @@
          <i class="fas fa-tasks fa"></i>
           <span>Proyectos</span>
         </a>
-        <!-- <div
+        <div
           id="collapseTwo"
           class="collapse"
           aria-labelledby="headingTwo"
@@ -54,10 +54,12 @@
         >
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <a class="collapse-item" href="index.php?projects">Todos</a>
+            <a class="collapse-item" href="index.php?scheduledProjects">Agendados</a>
+            <a class="collapse-item" href="index.php?activeProjects">Activos</a>
+            <a class="collapse-item" href="index.php?delayedProjects">Retrasados</a>
           </div>
-        </div> -->
+        </div>
       </li>
 
 

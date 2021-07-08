@@ -1,60 +1,90 @@
 <?php
-    require_once("dbConection.php");
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $email = $_POST['user'];
-        $password = $_POST['pass'];
-        $userId = "";
+function auth($email, $pass)
+{
+    try {
+        require_once("dbConection.php");
     
-        $sql = "SELECT * FROM usuarios where usuario = ?";
-        $sth = $pdo->prepare($sql);
+    $userId = "";
 
-        $sth -> execute(array($email));
-    
-    if($userRes = $sth->fetch()){
-        
-        if(password_verify($password, $userRes['contrasena'])){
+    $sql = "SELECT * FROM usuarios where usuario = ?";
+    $sth = $pdo->prepare($sql);
+
+    $sth->execute(array($email));
+
+    if ($userRes = $sth->fetch()) {
+
+        if (password_verify($pass, $userRes['contrasena'])) {
             $userId = $userRes['id'];
 
-        $sql2 = "SELECT fk_rol_usuario FROM roles_usuario_det where fk_usuario = ?";
-        $sth2 = $pdo->prepare($sql2);
-        $sth2 -> execute(array($userId));
+            $sql2 = "SELECT fk_rol_usuario FROM roles_usuario_det where fk_usuario = ?";
+            $sth2 = $pdo->prepare($sql2);
+            $sth2->execute(array($userId));
 
-    $userRolRes = $sth2->fetch(PDO::FETCH_ASSOC);
+            $userRolRes = $sth2->fetch(PDO::FETCH_ASSOC);
 
-    $sql3 = "SELECT nombres, apellidos FROM personas where email = ?";
-    $sth3 = $pdo->prepare($sql3);
-    $sth3 -> execute(array($email));
+            if ($userRolRes['fk_rol_usuario'] == 1) {
 
-    $res = $sth3->fetch(PDO::FETCH_ASSOC);
+                session_start();
 
-        if($userRolRes['fk_rol_usuario'] == 1){
-            
-            session_start();
+                $_SESSION['name'] = $userRes['nombre'];
 
-            $_SESSION['name'] = $res['nombres'];
-            $_SESSION['lastName'] = $res['apellidos'];
+                $_SESSION['user'] = $email;
+                $_SESSION['rol'] = $userRolRes['fk_rol_usuario'];
+                $_SESSION['userId'] = $userId;
+                $user = array(
+                    [
+                        'role' => $userRolRes['fk_rol_usuario']
+                    ]
+                );
+                print(json_encode($user[0]));
+                return;
+            } else {
+                session_start();
 
-            $_SESSION['user'] = $email;
-            $_SESSION['password'] = $password;
-            $_SESSION['rol'] = $userRolRes['fk_rol_usuario'];
-            $_SESSION['userId'] = $userId;
-            // header("Location: ../admin/index.php"); 
-            print(1);
+                $_SESSION['name'] = $userRes['nombre'];
 
-        }else{
-            print(2);
-            return 1;
+                $_SESSION['user'] = $email;
+                $_SESSION['rol'] = $userRolRes['fk_rol_usuario'];
+                $_SESSION['userId'] = $userId;
+                $user = array(
+                    [
+                        'role' => $userRolRes['fk_rol_usuario']
+                    ]
+                );
+                print(json_encode($user[0]));
+                return;
+            }
+        } else {
+            $error = array([
+                'error' => 'true',
+                'message' => "User or password doesn't match"
+            ]);
+            print(json_encode($error[0]));
+            return;
         }
-        }else{
-            print(0);
-        }
-    }else{
-        print(0);
+    } else {
+        $error = array([
+            'error' => 'true',
+            'message' => "User or password doesn't match"
+        ]);
+        print(json_encode($error[0]));
+        return;
     }
+    } catch (PDOException $e) {
+        $error = array([
+            'error' => 'true',
+            'message' => $e->getMessage()
+        ]);
+        print(json_encode($error[0]));
     }
-
-    
-
+}
 
 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    auth(
+         $_POST['user'],
+         $_POST['pass']
+        );
+}

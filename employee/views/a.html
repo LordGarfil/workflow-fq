@@ -1,0 +1,87 @@
+<div id="main-projects-content">
+    <div class="header-search" id="header-search-projects">
+      <div>
+        <h2>Proyectos</h2>
+        <div class="multipleSelection">
+          <div class="header-div-projects">
+            <div class="d-flex w-100">`+
+            `</div>
+  
+            <div>
+              
+            </div>
+          </div>
+  
+          <div id="checkBoxes" >
+            <label for="clientFilterSelect">
+              <input type="checkbox" id="clientFilterSelect" />
+              Cliente
+            </label>
+  
+            <label for="responsibleFilterSelect">
+              <input type="checkbox" id="responsibleFilterSelect" />
+              Responsable
+            </label>
+            <label for="beginDateFilterSelect">
+              <input type="checkbox" id="beginDateFilterSelect" />
+              Fecha Inicio
+            </label>
+            <label for="finishDateFilterSelect">
+              <input type="checkbox" id="finishDateFilterSelect" />
+              Fecha Fin
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="header-search-items">
+        <input
+          id="txtClientFilter"
+          type="text"
+          placeholder="Clientes"
+          class="form-control"
+        />
+        <input
+          type="text"
+          id="txtResponsibleFilter"
+          placeholder="Responsable"
+          class="form-control"
+        />
+        <input
+          placeholder="Fecha Inicio"
+          class="form-control type-date"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+          id="dateBeginFilter"
+        />
+        <input
+          placeholder="Fecha Fin"
+          class="form-control type-date"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+          id="dateFinishFilter"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="overflow-auto">
+    <table class="workflow-table" id="project-admin-table">
+      <thead>
+        <tr>
+          <th scope="col">Proyecto</th>
+          <th scope="col">Item</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Instalable</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Fecha Asignacion</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="project-admin-table-body">
+
+
+
+    </tbody>
+</table>
+</div>

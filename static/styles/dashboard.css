@@ -1,0 +1,19 @@
+.dashboard-overflow {
+  overflow: auto !important;
+}
+
+.dashboard-overflow ::-webkit-scrollbar {
+  width: 0;
+}
+
+@media (max-width: 800px) {
+  .dashboard-overflow {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-overflow {
+    font-size: 13px;
+  }
+}

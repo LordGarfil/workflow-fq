@@ -1,0 +1,64 @@
+.pop-up {
+  position: relative;
+  display: flex;
+  width: 35em;
+  padding: 1em;
+  padding-bottom: 0;
+  margin: auto;
+  top: 15%;
+  -webkit-box-shadow: 11px 10px 150px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 11px 10px 150px 0px rgba(0, 0, 0, 0.26);
+  box-shadow: 11px 10px 150px 0px rgba(0, 0, 0, 0.26);
+}
+
+.pop-up .pop-up_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pop-up .pop-up_header i[name=close-pop-up] {
+  font-size: 25px;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.pop-up .pop-up_header i[name=close-pop-up]:hover{
+  color: #2E59D9;
+}
+
+.pop-up div {
+  padding: 7px;
+}
+
+.pop-up .center {
+  display: flex;
+  justify-content: center;
+}
+
+.pop-up button {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65); /* Black background with opacity */
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+@media (max-width: 800px) {
+
+    .pop-up {
+        width: 23em;
+        padding: 1em;
+        padding-bottom: 0;
+      }
+
+}

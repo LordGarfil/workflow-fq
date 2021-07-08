@@ -1,0 +1,227 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Inicio</h1>
+  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+    ><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a
+  >
+</div>
+
+<!-- Content Row -->
+<div class="row text-center">
+  <!-- Pending Requests Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4" name="scheduledProjects">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body center-items">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div
+              class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+            >
+              Agendados
+            </div>
+            <div
+              class="h5 mb-0 font-weight-bold text-gray-800"
+              name="scheduledProjects_text"
+            ></div>
+          </div>
+          <div class="col-auto">
+            <!-- <i class="fas fa-comments fa-2x text-gray-300"></i> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4" name="activeProjects">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body center-items">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div
+              class="text-xs font-weight-bold text-success text-uppercase mb-1"
+            >
+              Proyectos Activos
+            </div>
+            <div
+              class="h5 mb-0 font-weight-bold text-gray-800"
+              name="activeProjects_text"
+            ></div>
+          </div>
+          <div class="col-auto">
+            <!--  <i class="fas fa-tasks fa-2x"></i> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4" name="delayedProjects">
+    <div class="card border-left-warning shadow h-100 py-2">
+      <div class="card-body center-items">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div
+              class="text-xs font-weight-bold text-warning text-uppercase mb-1"
+            >
+              Proyectos Retrasados
+            </div>
+            <div
+              class="h5 mb-0 font-weight-bold text-gray-800"
+              name="delayedProjects_text"
+            ></div>
+          </div>
+          <div class="col-auto">
+            <!--  <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4" name="canceledProjects">
+    <div class="card border-left-danger shadow h-100 py-2">
+      <div class="card-body center-items">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div
+              class="text-xs font-weight-bold text-danger text-uppercase mb-1"
+            >
+              Proyectos Cancelados
+            </div>
+            <div
+              class="h5 mb-0 font-weight-bold text-gray-800"
+              name="canceledProjects_text"
+            ></div>
+          </div>
+          <div class="col-auto">
+            <!-- <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+</div>
+
+<!-- Content Row -->
+
+<div class="row">
+  <!-- Area Chart -->
+  <div class="col-xl-8 col-lg-7">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div
+        class="
+          card-header
+          py-3
+          d-flex
+          flex-row
+          align-items-center
+          justify-content-between
+          bg-success
+        "
+      >
+        <h6 class="m-0 font-weight-bold text-white">Proyectos Activos</h6>
+        <!-- <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div> -->
+      </div>
+      <!-- Card Body -->
+      <div
+        class="card-body align-items-center"
+        id="activeProjects_employee_div"
+        style="padding: 0; height: 235px; position: relative"
+      >
+        <div class="dashboard-overflow" style="padding: 0; height: 200px">
+          <table class="workflow-table" id="activeProjects_employee">
+            <thead>
+              <tr>
+                <th scope="col">Proyecto</th>
+                <th scope="col">Item</th>
+                <th scope="col">Etapa</th>
+                <th scope="col">Fecha Inicio</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div
+          style="display: flex; align-items: center; height: 35px; padding: 3px"
+        >
+          <a href="./index.php?activeProjects"
+            >Ver todos los proyectos activos</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie Chart -->
+  <div class="col-xl-4 col-lg-5">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div
+        class="
+          card-header
+          py-3
+          d-flex
+          flex-row
+          align-items-center
+          justify-content-between
+          bg-warning
+        "
+      >
+        <h6 class="m-0 font-weight-bold text-white">Proyectos Retrasados</h6>
+        <!-- <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div> -->
+      </div>
+      <!-- Card Body -->
+      <div
+        class="card-body"
+        id="delayedProjects_employee_div"
+        style="padding: 0; height: 235px; position: relative"
+      >
+        <div class="dashboard-overflow" style="padding: 0; height: 200px">
+          <table class="workflow-table" id="delayedProjects_employee">
+            <thead>
+              <tr>
+                <th scope="col">Proyecto</th>
+                <th scope="col">Item</th>
+                <th scope="col">Entrega Estimada</th>
+                <th scope="col">Retraso</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div
+          style="display: flex; align-items: center; height: 35px; padding: 3px"
+        >
+          <a href="./index.php?projects">Ver todos los proyectos retrasados</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

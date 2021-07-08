@@ -1,10 +1,11 @@
 <?php
   session_start();
   
-  if(isset($_SESSION['user']) && isset($_SESSION['password'])){
-    if(isset($_SESSION['rol']) == 1){
+    if(isset($_SESSION['user'], $_SESSION['rol'])){
+    if($_SESSION['rol'] == 1){
       header("Location: ../admin/index.php");
-      return;
+    }else if($_SESSION['rol'] == 2){
+      header("Location: ../employee/index.php");
     }
   }
 ?>
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="../static/styles/sb-admin-2.css"> 
     
     
-    <title>Document</title>
+    <title>Inicio de Sesión</title>
 </head>
 <body>
     <div id="login-root">
@@ -37,8 +38,11 @@
                   <input type="password" placeholder="Contraseña" class="form-control input-card" name="pass" id="loginPassword" required>
                   <input type="submit" value="Iniciar Sesión" class="btn btn-primary form-control">
               </form>
-            </div>
           </div>
+          <div class="card-footer">
+              <a href="./passwordRecover.php">Recuperar contraseña</a>
+              </div>
+            </div>
           <div class="alert alert-warning" role="alert" id="loginAlert" hidden>
             ¡Usuario o contraseña incorrecta!
           </div></div>
